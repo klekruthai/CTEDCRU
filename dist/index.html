@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="เว็บไซต์สารสนเทศหลักสูตรครุศาสตรบัณฑิต สาขาวิชาคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฏจันทรเกษม" />
+  <meta name="theme-color" content="#2f3e5b" />
+  <title>CTED CHANDRA | Curriculum Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 antialiased">
+  <a href="#main-content" class="skip-link">ข้ามไปยังเนื้อหา</a>
+
+  <div class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-cted-navy/95 text-white shadow-lg backdrop-blur">
+      <div class="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <button type="button" class="brand-button focus-ring flex min-w-0 items-center gap-3 rounded-xl text-left" data-route="home" aria-label="กลับหน้าแรก">
+          <img src="assets/CTED 2022-04.jpg" alt="โลโก้ CTED CHANDRA" class="h-12 w-16 shrink-0 rounded-lg bg-white object-contain p-1" />
+          <span class="min-w-0">
+            <span class="block font-display text-base font-semibold leading-tight sm:text-lg">CTED CHANDRA</span>
+            <span class="block truncate text-[11px] text-slate-300 sm:text-xs">B.Ed. Computer · หลักสูตร พ.ศ. 2567</span>
+          </span>
+        </button>
+
+        <nav class="hidden items-center gap-1 lg:flex" aria-label="เมนูหลัก">
+          <button class="nav-button focus-ring" data-route="home">หน้าแรก</button>
+          <button class="nav-button focus-ring" data-route="courses">รายวิชา</button>
+          <button class="nav-button focus-ring" data-route="clos">CLOs</button>
+          <button class="nav-button focus-ring" data-route="plos">PLOs</button>
+          <button class="nav-button focus-ring" data-route="ptru">PTRU</button>
+          <button class="nav-button focus-ring" data-route="matrix">ตารางเชื่อมโยง</button>
+          <button class="nav-button focus-ring" data-route="about">เกี่ยวกับหลักสูตร</button>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="header-search-button" class="focus-ring hidden rounded-xl bg-cted-yellow px-4 py-2.5 text-sm font-semibold text-cted-navy hover:brightness-95 sm:inline-flex">ค้นหารายวิชา</button>
+          <button id="mobile-menu-button" class="focus-ring rounded-xl border border-white/20 p-2.5 lg:hidden" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav id="mobile-menu" class="hidden border-t border-white/10 bg-cted-navy px-4 py-3 lg:hidden" aria-label="เมนูมือถือ">
+        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <button class="mobile-nav-button" data-route="home">หน้าแรก</button>
+          <button class="mobile-nav-button" data-route="courses">รายวิชา</button>
+          <button class="mobile-nav-button" data-route="clos">CLOs รายวิชา</button>
+          <button class="mobile-nav-button" data-route="plos">PLOs</button>
+          <button class="mobile-nav-button" data-route="ptru">PTRU</button>
+          <button class="mobile-nav-button" data-route="matrix">ตารางเชื่อมโยง</button>
+          <button class="mobile-nav-button" data-route="about">เกี่ยวกับหลักสูตร</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="min-h-[calc(100vh-80px)]">
+      <section id="view-home" class="app-view">
+        <div class="hero-shell relative overflow-hidden bg-cted-navy text-white">
+          <div class="hero-grid absolute inset-0 opacity-30" aria-hidden="true"></div>
+          <div class="relative mx-auto grid max-w-[1500px] gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.3fr_.7fr] lg:px-8 lg:py-24">
+            <div class="max-w-4xl">
+              <div class="inline-flex items-center gap-2 rounded-full border border-cted-cyan/40 bg-white/5 px-4 py-2 text-sm text-cyan-100">
+                <span class="h-2.5 w-2.5 rounded-full bg-cted-yellow"></span>
+                หลักสูตรปรับปรุง พ.ศ. 2567
+              </div>
+              <h1 class="mt-6 font-display text-4xl font-semibold leading-[1.18] sm:text-5xl lg:text-6xl">
+                ครุศาสตรบัณฑิต<br><span class="text-cted-cyan">สาขาวิชาคอมพิวเตอร์</span>
+              </h1>
+              <p class="mt-4 text-base leading-8 text-slate-200 sm:text-lg">Bachelor of Education Program in Computer (4 Years)</p>
+              <p id="home-philosophy" class="mt-6 max-w-3xl border-l-4 border-cted-yellow pl-5 text-base leading-8 text-slate-100 sm:text-lg"></p>
+
+              <div class="mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/10 p-3 shadow-2xl backdrop-blur">
+                <label for="home-search" class="sr-only">ค้นหารายวิชา</label>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                  <div class="relative flex-1">
+                    <svg class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input id="home-search" class="focus-ring w-full rounded-xl border-0 bg-white py-3.5 pl-12 pr-4 text-slate-800 placeholder:text-slate-400" placeholder="ค้นหารหัสวิชา ชื่อวิชา หรือคำสำคัญ เช่น CTED1301" autocomplete="off" />
+                  </div>
+                  <button id="home-search-button" class="focus-ring rounded-xl bg-cted-yellow px-6 py-3.5 font-semibold text-cted-navy hover:brightness-95">ค้นหา</button>
+                </div>
+              </div>
+
+              <div id="home-stats" class="mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-5"></div>
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-end">
+              <div class="relative w-full max-w-md">
+                <div class="absolute -inset-6 rounded-[2.5rem] bg-cted-cyan/20 blur-3xl" aria-hidden="true"></div>
+                <div class="relative rounded-[2rem] border border-white/20 bg-white p-6 shadow-2xl">
+                  <img src="assets/CTED 2022-04.jpg" alt="โลโก้ CTED CHANDRA ต้นฉบับ" class="aspect-[4/3] w-full object-contain" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mx-auto max-w-[1500px] px-4 py-16 sm:px-6 lg:px-8">
+          <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p class="eyebrow">Explore the curriculum</p>
+              <h2 class="section-title">เข้าถึงข้อมูลหลักสูตรได้ในไม่กี่คลิก</h2>
+              <p class="section-description">ค้นหารายวิชา ตรวจสอบ CLO และ PLO รวมถึงสมรรถนะ PTRU Model พร้อมข้อมูลอ้างอิงจากเอกสารหลักสูตร</p>
+            </div>
+          </div>
+          <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            <button class="feature-card group" data-route="courses">
+              <span class="feature-icon bg-cyan-50 text-cted-cyan-dark">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </span>
+              <span class="mt-5 block font-display text-xl font-medium text-cted-navy">สืบค้นรายวิชา</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">ค้นหาจากรหัส ชื่อ คำอธิบาย CLO, PLO และ PTRU</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cted-cyan-dark">เริ่มค้นหา <span aria-hidden="true">→</span></span>
+            </button>
+
+            <button class="feature-card group" data-route="clos">
+              <span class="feature-icon bg-blue-50 text-blue-700">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12h6M9 16h6"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+              </span>
+              <span class="mt-5 block font-display text-xl font-medium text-cted-navy">CLO รายวิชา</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">ดูผลลัพธ์การเรียนรู้ระดับรายวิชา พร้อมค้นหาจากรหัสและข้อความ CLO</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cted-cyan-dark">ดู CLOs <span aria-hidden="true">→</span></span>
+            </button>
+            <button class="feature-card group" data-route="plos">
+              <span class="feature-icon bg-amber-50 text-amber-700">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+              </span>
+              <span class="mt-5 block font-display text-xl font-medium text-cted-navy">ผลลัพธ์การเรียนรู้</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">PLO1–PLO13 แบ่งตามหมวดศึกษาทั่วไป วิชาชีพครู และวิชาเอก</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cted-cyan-dark">ดู PLOs <span aria-hidden="true">→</span></span>
+            </button>
+            <button class="feature-card group" data-route="ptru">
+              <span class="feature-icon bg-violet-50 text-violet-700">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <span class="mt-5 block font-display text-xl font-medium text-cted-navy">PTRU Model</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">สมรรถนะกลางสำหรับการผลิตและพัฒนาครูฐานสมรรถนะ 17 รายการ</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cted-cyan-dark">ดูสมรรถนะ <span aria-hidden="true">→</span></span>
+            </button>
+            <button class="feature-card group" data-route="matrix">
+              <span class="feature-icon bg-emerald-50 text-emerald-700">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+              <span class="mt-5 block font-display text-xl font-medium text-cted-navy">ตารางเชื่อมโยง</span>
+              <span class="mt-2 block text-sm leading-7 text-slate-600">ตรวจสอบความสัมพันธ์ระหว่างรายวิชากับ PLO และ PTRU</span>
+              <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cted-cyan-dark">เปิดตาราง <span aria-hidden="true">→</span></span>
+            </button>
+          </div>
+
+          <div class="mt-16 grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
+            <section class="rounded-3xl bg-cted-navy p-6 text-white sm:p-8">
+              <p class="eyebrow text-cted-yellow">Curriculum structure</p>
+              <h2 class="mt-2 font-display text-3xl font-semibold">โครงสร้างหลักสูตร 138 หน่วยกิต</h2>
+              <div id="home-structure" class="mt-6 grid gap-4 sm:grid-cols-3"></div>
+              <div class="mt-6 overflow-hidden rounded-full bg-white/10" aria-label="สัดส่วนหน่วยกิต">
+                <div class="flex h-4">
+                  <span class="bg-cted-yellow" style="width:21.739%" title="ศึกษาทั่วไป 30 หน่วยกิต"></span>
+                  <span class="bg-cted-cyan" style="width:73.913%" title="เฉพาะด้าน 102 หน่วยกิต"></span>
+                  <span class="bg-white" style="width:4.348%" title="เลือกเสรี 6 หน่วยกิต"></span>
+                </div>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-300">
+                <span><i class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-cted-yellow"></i>ศึกษาทั่วไป 30</span>
+                <span><i class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-cted-cyan"></i>เฉพาะด้าน 102</span>
+                <span><i class="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-white"></i>เลือกเสรี 6</span>
+              </div>
+            </section>
+
+            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p class="eyebrow">Featured courses</p>
+              <h2 class="mt-2 font-display text-2xl font-semibold text-cted-navy">รายวิชาแนะนำ</h2>
+              <div id="featured-courses" class="mt-5 space-y-3"></div>
+              <button class="focus-ring mt-6 w-full rounded-xl border border-cted-cyan px-4 py-3 font-semibold text-cted-cyan-dark hover:bg-cyan-50" data-route="courses">ดูรายวิชาทั้งหมด</button>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-courses" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">Course explorer</p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">สืบค้นข้อมูลรายวิชา</h1>
+            <p class="mt-3 max-w-3xl leading-7 text-slate-200">ค้นหาและกรองข้อมูลรายวิชาจากเอกสารหลักสูตร พร้อมดู CLO, PLO, PTRU และเลขหน้าอ้างอิง</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8">
+          <div class="grid gap-6 xl:grid-cols-[310px_1fr]">
+            <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-5 shadow-sm xl:sticky xl:top-24">
+              <div class="flex items-center justify-between">
+                <h2 class="font-display text-lg font-medium text-cted-navy">ตัวกรอง</h2>
+                <button id="course-clear" class="focus-ring rounded-lg px-2 py-1 text-sm font-medium text-cted-cyan-dark hover:bg-cyan-50">ล้างทั้งหมด</button>
+              </div>
+              <div class="mt-5 space-y-5">
+                <label class="block">
+                  <span class="filter-label">คำค้นหา</span>
+                  <div class="relative mt-1.5">
+                    <svg class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input id="course-search" class="form-control pl-11" placeholder="รหัส ชื่อ คำอธิบาย หรือข้อความ CLO" autocomplete="off" />
+                  </div>
+                </label>
+                <label class="block">
+                  <span class="filter-label">หมวดวิชา</span>
+                  <select id="course-category" class="form-control mt-1.5">
+                    <option value="all">ทุกหมวดวิชา</option>
+                    <option value="general">หมวดวิชาศึกษาทั่วไป</option>
+                    <option value="teacher">กลุ่มวิชาชีพครู</option>
+                    <option value="major">กลุ่มวิชาเอก</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="filter-label">กลุ่มวิชา</span>
+                  <select id="course-group" class="form-control mt-1.5"><option value="all">ทุกกลุ่มวิชา</option></select>
+                </label>
+                <label class="block">
+                  <span class="filter-label">Program Learning Outcome</span>
+                  <select id="course-plo" class="form-control mt-1.5"><option value="all">ทุก PLO</option></select>
+                </label>
+                <label class="block">
+                  <span class="filter-label">PTRU Competency</span>
+                  <select id="course-ptru" class="form-control mt-1.5"><option value="all">ทุกสมรรถนะ</option></select>
+                </label>
+                <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-slate-200 p-3 hover:bg-slate-50">
+                  <input id="course-favorites-only" type="checkbox" class="h-4 w-4 accent-cted-cyan" />
+                  <span class="text-sm font-medium">แสดงเฉพาะรายการที่บันทึก</span>
+                </label>
+              </div>
+            </aside>
+
+            <div class="min-w-0">
+              <div class="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <div id="course-result-count" class="font-display text-lg font-medium text-cted-navy"></div>
+                  <div id="course-filter-summary" class="mt-1 text-sm text-slate-500"></div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <label class="sr-only" for="course-sort">เรียงลำดับ</label>
+                  <select id="course-sort" class="focus-ring rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                    <option value="code">เรียงตามรหัสวิชา</option>
+                    <option value="name">เรียงตามชื่อวิชา</option>
+                    <option value="credits">เรียงตามหน่วยกิต</option>
+                  </select>
+                  <button id="course-export" class="focus-ring inline-flex items-center gap-2 rounded-xl border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    ส่งออก CSV
+                  </button>
+                </div>
+              </div>
+
+              <div id="course-list" class="mt-5 grid gap-4 lg:grid-cols-2 2xl:grid-cols-3"></div>
+              <div id="course-empty" class="mt-5 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
+                <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </div>
+                <h3 class="mt-4 font-display text-xl font-medium text-cted-navy">ไม่พบรายวิชาที่ตรงกับเงื่อนไข</h3>
+                <p class="mt-2 text-sm text-slate-500">ลองเปลี่ยนคำค้นหา หรือล้างตัวกรองบางรายการ</p>
+              </div>
+              <div class="mt-6 text-center"><button id="course-load-more" class="focus-ring rounded-xl border border-cted-cyan px-6 py-3 font-semibold text-cted-cyan-dark hover:bg-cyan-50">แสดงเพิ่มเติม</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-clos" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">Course Learning Outcomes</p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">ผลลัพธ์การเรียนรู้ระดับรายวิชา (CLOs)</h1>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-200">ค้นหาและตรวจสอบผลลัพธ์การเรียนรู้ของแต่ละรายวิชาจากเอกสาร มคอ.2 พร้อมเปิดรายละเอียดรายวิชาได้ทันที</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+          <section class="grid gap-4 sm:grid-cols-3" aria-label="สรุปข้อมูล CLO">
+            <div class="clo-summary-card"><div id="clo-total-count" class="clo-summary-number"></div><div class="clo-summary-label">รายการ CLO ที่มีคำอธิบาย</div></div>
+            <div class="clo-summary-card"><div id="clo-course-count" class="clo-summary-number"></div><div class="clo-summary-label">รายวิชาที่มีข้อมูล CLO</div></div>
+            <div class="clo-summary-card"><div id="clo-missing-count" class="clo-summary-number"></div><div class="clo-summary-label">รายวิชาที่ไม่พบคำอธิบาย CLO</div></div>
+          </section>
+
+          <section class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="grid gap-4 lg:grid-cols-[1fr_260px_auto] lg:items-end">
+              <label class="block">
+                <span class="filter-label">ค้นหา CLO</span>
+                <div class="relative mt-1.5">
+                  <svg class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  <input id="clo-search" class="form-control pl-11" placeholder="รหัสวิชา ชื่อวิชา CLO37 หรือข้อความผลลัพธ์" autocomplete="off" />
+                </div>
+              </label>
+              <label class="block">
+                <span class="filter-label">หมวดวิชา</span>
+                <select id="clo-category" class="form-control mt-1.5">
+                  <option value="all">ทุกหมวดวิชา</option>
+                  <option value="general">หมวดวิชาศึกษาทั่วไป</option>
+                  <option value="teacher">กลุ่มวิชาชีพครู</option>
+                  <option value="major">กลุ่มวิชาเอก</option>
+                </select>
+              </label>
+              <button id="clo-clear" class="focus-ring rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">ล้างตัวกรอง</button>
+            </div>
+            <div id="clo-status" class="mt-4 text-sm text-slate-500" role="status" aria-live="polite"></div>
+          </section>
+
+          <div id="clo-list" class="mt-7 grid gap-5 xl:grid-cols-2"></div>
+          <div id="clo-empty" class="mt-7 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
+            <div class="font-display text-xl font-medium text-cted-navy">ไม่พบข้อมูล CLO ที่ตรงกับเงื่อนไข</div>
+            <p class="mt-2 text-sm text-slate-500">ลองเปลี่ยนคำค้นหรือเลือกหมวดวิชาอื่น</p>
+          </div>
+          <div class="mt-8 flex justify-center"><button id="clo-load-more" class="focus-ring rounded-xl bg-cted-navy px-6 py-3 text-sm font-semibold text-white hover:bg-cted-navy-2">แสดงรายวิชาเพิ่มเติม</button></div>
+          <aside class="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
+            <strong>หมายเหตุด้านข้อมูล:</strong> รายวิชา GECS2109 มีการระบุ CLO1–CLO2 ในตารางความสอดคล้อง แต่ไม่พบข้อความคำอธิบาย CLO ในส่วนรายละเอียดของเอกสาร เว็บไซต์จึงไม่สร้างข้อความเพิ่มเติมขึ้นเอง
+          </aside>
+        </div>
+      </section>
+
+      <section id="view-plos" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">Program Learning Outcomes</p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">ผลลัพธ์การเรียนรู้ที่คาดหวังของหลักสูตร</h1>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-200">PLO1–PLO13 แบ่งตามหมวดวิชาศึกษาทั่วไป กลุ่มวิชาชีพครู และกลุ่มวิชาเอก</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+          <div id="plo-tabs" class="flex flex-wrap gap-2"></div>
+          <div id="plo-list" class="mt-7 grid gap-5 lg:grid-cols-2"></div>
+
+          <section class="mt-14 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+            <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p class="eyebrow">Qualification framework</p>
+                <h2 class="mt-2 font-display text-2xl font-semibold text-cted-navy">ความสอดคล้องกับมาตรฐานคุณวุฒิระดับอุดมศึกษา</h2>
+                <p class="mt-2 text-sm leading-7 text-slate-600">แสดงมิติด้านความรู้ ทักษะ จริยธรรม และลักษณะบุคคลตามตารางในเอกสารหลักสูตร</p>
+              </div>
+            </div>
+            <div id="qualification-legend" class="mt-5 flex flex-wrap gap-2"></div>
+            <div class="table-scroll mt-5">
+              <table class="data-table min-w-[1120px]">
+                <caption class="sr-only">ตารางความสอดคล้อง PLO กับมาตรฐานคุณวุฒิ</caption>
+                <thead><tr><th class="sticky-col min-w-20">PLO</th><th class="min-w-[420px] text-left">ผลลัพธ์การเรียนรู้</th><th>R</th><th>U</th><th>Ap</th><th>An</th><th>E</th><th>C</th><th>S</th><th>Et</th><th>At</th></tr></thead>
+                <tbody id="qualification-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="view-ptru" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">PTRU Model</p>
+            <h1 class="mt-2 max-w-5xl font-display text-3xl font-semibold text-white sm:text-4xl">สมรรถนะกลางในการผลิตและพัฒนาครูฐานสมรรถนะ</h1>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-200">สมรรถนะบัณฑิตครูของมหาวิทยาลัยราชภัฏ 38 แห่ง จำนวน 17 สมรรถนะ</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <label for="ptru-search" class="filter-label">ค้นหาสมรรถนะ</label>
+            <div class="relative mt-2 max-w-2xl">
+              <svg class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input id="ptru-search" class="form-control pl-12" placeholder="ค้นหาชื่อภาษาไทย ภาษาอังกฤษ หรือคำอธิบาย" />
+            </div>
+          </div>
+          <div id="ptru-list" class="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <section id="view-matrix" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">Curriculum mapping</p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">ตารางความสัมพันธ์รายวิชา</h1>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-200">ตรวจสอบการเชื่อมโยงรายวิชากับ PLO และสมรรถนะ PTRU Model</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div>
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="เลือกประเภทตาราง">
+                  <button class="matrix-tab focus-ring" data-matrix="plo" role="tab" aria-selected="true">Course–PLO</button>
+                  <button class="matrix-tab focus-ring" data-matrix="ptru" role="tab" aria-selected="false">Course–PTRU</button>
+                </div>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-[minmax(220px,1fr)_220px_auto]">
+                <label class="block"><span class="filter-label">ค้นหารายวิชา</span><input id="matrix-search" class="form-control mt-1.5" placeholder="รหัสหรือชื่อรายวิชา" /></label>
+                <label class="block"><span class="filter-label">หมวดวิชา</span><select id="matrix-category" class="form-control mt-1.5"><option value="all">ทุกหมวดวิชา</option><option value="general">ศึกษาทั่วไป</option><option value="teacher">วิชาชีพครู</option><option value="major">วิชาเอก</option></select></label>
+                <button id="matrix-print" class="focus-ring self-end rounded-xl border border-slate-300 px-4 py-3 text-sm font-medium hover:bg-slate-50">พิมพ์ตาราง</button>
+              </div>
+            </div>
+            <div id="matrix-status" class="mt-5 text-sm text-slate-500"></div>
+            <div class="mt-3 rounded-xl bg-cyan-50 px-4 py-3 text-sm text-cyan-900 md:hidden">เลื่อนตารางในแนวนอนเพื่อดูข้อมูลเพิ่มเติม</div>
+            <div class="table-scroll mt-4 max-h-[68vh]">
+              <table id="mapping-table" class="data-table"></table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-about" class="app-view hidden">
+        <div class="page-hero">
+          <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+            <p class="eyebrow text-cted-yellow">About the programme</p>
+            <h1 class="mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">เกี่ยวกับหลักสูตร</h1>
+            <p class="mt-3 max-w-4xl leading-7 text-slate-200">ข้อมูลหลักสูตร ปรัชญา วิสัยทัศน์ อัตลักษณ์ และเส้นทางอาชีพจากเอกสาร มคอ.2</p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-[1500px] px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-[.85fr_1.15fr]">
+            <aside class="h-fit rounded-3xl bg-cted-navy p-6 text-white sm:p-8 lg:sticky lg:top-24">
+              <img src="assets/CTED 2022-04.jpg" alt="โลโก้ CTED CHANDRA" class="mx-auto aspect-[4/3] w-full max-w-sm rounded-2xl bg-white object-contain p-4" />
+              <dl id="program-meta" class="mt-7 space-y-4 text-sm"></dl>
+            </aside>
+            <div class="space-y-6">
+              <article class="content-card"><p class="eyebrow">Vision</p><h2 class="content-title">วิสัยทัศน์</h2><p id="about-vision" class="content-body"></p></article>
+              <article class="content-card"><p class="eyebrow">Philosophy</p><h2 class="content-title">ปรัชญาการศึกษา</h2><p id="about-philosophy" class="content-body"></p></article>
+              <article class="content-card"><p class="eyebrow">CTED identity</p><h2 class="content-title">อัตลักษณ์ของหลักสูตร</h2><div id="identity-list" class="mt-5 grid gap-4 sm:grid-cols-2"></div></article>
+              <article class="content-card"><p class="eyebrow">Career pathways</p><h2 class="content-title">อาชีพหลังสำเร็จการศึกษา</h2><ul id="career-list" class="mt-5 grid gap-3 sm:grid-cols-2"></ul></article>
+              <article class="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950"><strong>แหล่งข้อมูล:</strong> ข้อมูลทั้งหมดในเว็บไซต์นี้มาจากเอกสารรายละเอียดของหลักสูตร (มคอ.2) และใช้โลโก้ CTED CHANDRA จากไฟล์ต้นฉบับโดยไม่แก้ไขภาพ</article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-8">
+      <div class="mx-auto flex max-w-[1500px] flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+          <img src="assets/CTED 2022-04.jpg" alt="โลโก้ CTED CHANDRA" class="h-14 w-20 rounded-lg bg-white object-contain" />
+          <div><div class="font-display font-semibold text-cted-navy">CTED CHANDRA</div><div class="mt-1 text-xs text-slate-500">คณะวิทยาศาสตร์ มหาวิทยาลัยราชภัฏจันทรเกษม</div></div>
+        </div>
+        <div class="text-xs leading-6 text-slate-500">ข้อมูลอ้างอิงจาก มคอ.2 หลักสูตรปรับปรุง พ.ศ. 2567</div>
+      </div>
+    </footer>
+  </div>
+
+  <nav class="fixed inset-x-3 bottom-3 z-40 grid grid-cols-6 rounded-2xl border border-slate-200 bg-white/95 p-1.5 shadow-2xl backdrop-blur lg:hidden" aria-label="เมนูล่างมือถือ">
+    <button class="bottom-nav-button" data-route="home"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 11 9-9 9 9"/><path d="M5 10v10h14V10"/></svg><span>หน้าแรก</span></button>
+    <button class="bottom-nav-button" data-route="courses"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>รายวิชา</span></button>
+    <button class="bottom-nav-button" data-route="clos"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12h6M9 16h6"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg><span>CLOs</span></button>
+    <button class="bottom-nav-button" data-route="plos"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span>PLOs</span></button>
+    <button class="bottom-nav-button" data-route="ptru"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>PTRU</span></button>
+    <button class="bottom-nav-button" data-route="matrix"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>ตาราง</span></button>
+  </nav>
+
+  <dialog id="course-dialog" class="course-dialog m-auto w-[min(980px,96vw)] rounded-3xl p-0 text-slate-800 shadow-2xl backdrop:bg-slate-950/70">
+    <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-slate-200 bg-white p-5 sm:p-6">
+      <div class="min-w-0">
+        <div id="dialog-code" class="font-mono text-sm font-bold tracking-wide text-cted-cyan-dark"></div>
+        <h2 id="dialog-title" class="mt-1 font-display text-2xl font-semibold leading-tight text-cted-navy sm:text-3xl"></h2>
+        <p id="dialog-english" class="mt-1 text-sm text-slate-500"></p>
+      </div>
+      <button id="dialog-close" class="focus-ring shrink-0 rounded-full border border-slate-200 p-2.5 hover:bg-slate-50" aria-label="ปิดหน้าต่าง">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="dialog-content" class="max-h-[calc(92vh-118px)] overflow-y-auto p-5 sm:p-7"></div>
+  </dialog>
+
+  <div id="toast" class="pointer-events-none fixed bottom-24 left-1/2 z-[80] hidden -translate-x-1/2 rounded-xl bg-slate-950 px-4 py-3 text-sm font-medium text-white shadow-xl lg:bottom-6" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

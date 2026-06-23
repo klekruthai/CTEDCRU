@@ -1,0 +1,14 @@
+{
+  "name": "cted-chandra-curriculum-explorer-v2",
+  "version": "2.2.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs && tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "test": "node test_site.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.10",
+    "tailwindcss": "4.1.10",
+    "jsdom": "24.1.3"
+  }
+}
